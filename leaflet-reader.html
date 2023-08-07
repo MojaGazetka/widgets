@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      property="og:title"
+      content="Leaflets Reader - Moja Gazetka Widgets"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mojagazetka.com/" />
+    <meta
+      property="og:image"
+      content="https://mojagazetka.com/mg-group/grupa-moja-gazetka-mapa.png"
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+
+  <body>
+    <div class="container p-4 mx-auto">
+      <h2>Basic</h2>
+      <iframe
+        src="https://dev.mojagazetka.com/widgets/leaflet-reader/230813_230731_black-red-white_gmypq/1?"
+        style="width: 100%; height: calc(100vh + 300px); border: none;"
+      ></iframe>
+
+      <h2>Custom color and bg</h2>
+      <iframe
+        src="https://dev.mojagazetka.com/widgets/leaflet-reader/230813_230731_black-red-white_gmypq/1?color=003569"
+        style="width: 100%; height: calc(100vh + 300px); border: none;"
+      ></iframe>
+
+      <h2>Hide Partner</h2>
+      <iframe
+        src="https://dev.mojagazetka.com/widgets/leaflet-reader/230813_230731_black-red-white_gmypq/1?hidePartner=true"
+        style="width: 100%; height: calc(100vh + 300px); border: none;"
+      ></iframe>
+
+      <!--Custom url-->
+      <h2>Custom url</h2>
+      <iframe
+        src="https://dev.mojagazetka.com/widgets/leaflet-reader/230813_230731_black-red-white_gmypq/1?baseUrl=https://dev.mojagazetka.com/widgets/leaflet-reader"
+        style="width: 100%; height: calc(100vh + 300px); border: none;"
+      ></iframe>
+    </div>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  </body>
+</html>
