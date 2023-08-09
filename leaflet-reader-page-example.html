@@ -84,6 +84,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const leafletId = urlParams.get("leafletId");
         const page = urlParams.get("page");
+        const isRedirected = urlParams.get("isRedirected");
 
         if (leafletId === null || page === null) {
           throw new Error("leafletId and page are required");
@@ -96,6 +97,9 @@
         searchParams.append("baseUrl", BASE_URL);
         searchParams.append("color", "003569");
         searchParams.append("useSearchParams", "true");
+        if(isRedirected) {
+          searchParams.append("isRedirected", "true");
+        }
         url.search = searchParams.toString();
 
         const iframe = document.createElement("iframe");
@@ -130,6 +134,8 @@
         searchParams.append("url", BASE_URL);
         searchParams.append("rows", "2");
         searchParams.append("limit", "32");
+        searchParams.append("color", "003569");
+        searchParams.append("hidePartner", "true");
         searchParams.append("useSearchParams", "true");
         if (leafletId) {
           searchParams.append("recommendedById", leafletId);
