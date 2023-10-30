@@ -83,15 +83,15 @@
     ></iframe>
     <script>
       {
-        // const MG_ORIGIN = "https://dev.mojagazetka.com";
+        const MG_ORIGIN = "https://dev.mojagazetka.com";
         // const MG_ORIGIN = "http://localhost:4200/";
-        const MG_ORIGIN = "https://moja-gazetka-web-git-feature-mgweb-990-fdcf63-moja-gazetka-team.vercel.app/";
+        // const MG_ORIGIN = "https://moja-gazetka-web-git-release-1452-moja-gazetka-team.vercel.app/";
         const CONTAINER_ID = "mg-leaflet-reader";
         const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
         const urlParams = new URLSearchParams(window.location.search);
-        const leafletId = urlParams.get("leafletId");
-        const page = urlParams.get("page");
+        const leafletId = urlParams.get("leafletId") ?? '231031_231026_netto_cjoum';
+        const page = urlParams.get("page")?? '1'
         const isRedirected = urlParams.get("isRedirected");
 
         if (leafletId === null || page === null) {
@@ -127,9 +127,9 @@
     ></iframe>
     <script>
       {
-        // const MG_ORIGIN = "https://dev.mojagazetka.com";
+        const MG_ORIGIN = "https://dev.mojagazetka.com";
         // const MG_ORIGIN = "http://localhost:4200/";
-        const MG_ORIGIN = "https://moja-gazetka-web-git-feature-mgweb-990-fdcf63-moja-gazetka-team.vercel.app/";
+        // const MG_ORIGIN = "https://moja-gazetka-web-git-release-1452-moja-gazetka-team.vercel.app/";
         const CONTAINER_ID = "mg-leaflet-carousel";
         const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
