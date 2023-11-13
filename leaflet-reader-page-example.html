@@ -26,15 +26,71 @@
 
     <meta name="theme-color" content="#fafafa" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T743XNN");
+    </script>
+    <script>
+      (function () {
+        const GA_ID = "G-WNC5CM1XK5";
+        // List all the origins that might send dataLayer messages to this listener
+        const allowedOrigins = [
+          "https://mojagazetka.com",
+          "http://localhost:4200",
+          "https://moja-gazetka-web-git-hotfix-1502-moja-gazetka-team.vercel.app",
+        ];
+
+        const handleMessage = function (event) {
+          if (window.gtag === undefined) return;
+          if (!allowedOrigins.includes(event.origin)) return;
+          try {
+            const msg = JSON.parse(event.data);
+            console.log("event", msg.eventName, {
+              send_to: GA_ID,
+              ...msg.params,
+            });
+            window.gtag("event", msg.eventName, {
+              send_to: GA_ID,
+              ...msg.params,
+            });
+          } catch (e) {
+            console.error(e);
+          }
+        };
+
+        window.addEventListener("message", handleMessage);
+      })();
+    </script>
   </head>
 
   <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T743XNN"
+        height="0"
+        width="0"
+      ></iframe>
+    </noscript>
     <header>
       <div class="py-4 px-2 bg-yellow-200">
         <nav class="flex items-center justify-between flex-wrap">
-          <div
-            class="text-sm lg:flex-grow mt-2 animated jackinthebox xl:mx-8"
-          >
+          <div class="text-sm lg:flex-grow mt-2 animated jackinthebox xl:mx-8">
             <a
               href="#home"
               class="block lg:inline-block text-md font-bold text-orange-500 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
@@ -83,15 +139,17 @@
     ></iframe>
     <script>
       {
-        const MG_ORIGIN = "https://dev.mojagazetka.com";
+        // const MG_ORIGIN = "https://dev.mojagazetka.com";
         // const MG_ORIGIN = "http://localhost:4200/";
-        // const MG_ORIGIN = "https://moja-gazetka-web-git-release-1452-moja-gazetka-team.vercel.app/";
+        const MG_ORIGIN =
+          "https://moja-gazetka-web-git-hotfix-1502-moja-gazetka-team.vercel.app/";
         const CONTAINER_ID = "mg-leaflet-reader";
         const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
         const urlParams = new URLSearchParams(window.location.search);
-        const leafletId = urlParams.get("leafletId") ?? '231031_231026_netto_cjoum';
-        const page = urlParams.get("page")?? '1'
+        const leafletId =
+          urlParams.get("leafletId") ?? "231031_231026_netto_cjoum";
+        const page = urlParams.get("page") ?? "1";
         const isRedirected = urlParams.get("isRedirected");
 
         if (leafletId === null || page === null) {
@@ -127,9 +185,10 @@
     ></iframe>
     <script>
       {
-        const MG_ORIGIN = "https://dev.mojagazetka.com";
+        // const MG_ORIGIN = "https://dev.mojagazetka.com";
         // const MG_ORIGIN = "http://localhost:4200/";
-        // const MG_ORIGIN = "https://moja-gazetka-web-git-release-1452-moja-gazetka-team.vercel.app/";
+        const MG_ORIGIN =
+          "https://moja-gazetka-web-git-hotfix-1502-moja-gazetka-team.vercel.app/";
         const CONTAINER_ID = "mg-leaflet-carousel";
         const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
@@ -155,24 +214,20 @@
       }
     </script>
 
-      <a
-        href="https://mojagazetka.com"
-        aria-label="Moja Gazetka - strona główna"
-        style="
-          display: flex;
-          justify-content: center;
-          margin-bottom: 16px;
-        "
-        target="_top"
-        ><img
-          alt="Gazetki promocyjne"
-          width="168"
-          height="40"
-          decoding="async"
-          data-nimg="1"
-          style="color: transparent"
-          src="https://moja-gazetka-web-git-feature-mgweb-990-fdcf63-moja-gazetka-team.vercel.app/assets/mojagazetka-partnerserwisu.png"
-      /></a>
+    <a
+      href="https://mojagazetka.com"
+      aria-label="Moja Gazetka - strona główna"
+      style="display: flex; justify-content: center; margin-bottom: 16px"
+      target="_top"
+      ><img
+        alt="Gazetki promocyjne"
+        width="168"
+        height="40"
+        decoding="async"
+        data-nimg="1"
+        style="color: transparent"
+        src="https://moja-gazetka-web-git-feature-mgweb-990-fdcf63-moja-gazetka-team.vercel.app/assets/mojagazetka-partnerserwisu.png"
+    /></a>
 
     <div class="h-80 bg bg-yellow-300 flex justify-center items-center">
       Footer
