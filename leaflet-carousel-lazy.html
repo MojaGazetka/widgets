@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      property="og:title"
+      content="Leaflets Carousel - Moja Gazetka Widgets"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mojagazetka.com/" />
+    <meta
+      property="og:image"
+      content="https://mojagazetka.com/mg-group/grupa-moja-gazetka-mapa.png"
+    />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body>
+    <div class="container p-4 mx-auto">
+      <div style="height: 200vh; background-color: aquamarine">
+        scroll down
+        <br />
+        widget załaduje się dopiero gdy będzie w zasięgu 300px od widoku
+      </div>
+
+      <iframe
+        src=""
+        id="mg-leaflet-carousel"
+        style="width: 100%; height: 410px; border: none"
+      ></iframe>
+      <script>
+        {
+          let wasInit = false;
+          const MG_ORIGIN = "https://mojagazetka.com";
+          const CONTAINER_ID = "mg-leaflet-carousel";
+          const BASE_URL = `${window.location.origin}/moja-gazetka`;
+          const iframe = document.getElementById(CONTAINER_ID);
+
+          new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!wasInit && entry.isIntersecting) {
+                  wasInit = true;
+                  initCarousel();
+                }
+              });
+            },
+            {
+              root: null,
+              rootMargin: "300px",
+              threshold: [0],
+            },
+          ).observe(iframe);
+
+          function initCarousel() {
+            const url = new URL(`${MG_ORIGIN}/widgets/leaflet-carousel`);
+            const searchParams = new URLSearchParams();
+            searchParams.append("url", BASE_URL);
+            searchParams.append("color", "003569");
+            searchParams.append("useSearchParams", "true");
+            searchParams.append("city", "raciborz");
+            searchParams.append("utm_medium", "widgets");
+            searchParams.append("utm_source", "sample.pl");
+            searchParams.append("hidePartner", "true");
+            searchParams.append("hideAllLeafletsLink", "true");
+            url.search = searchParams.toString();
+
+            iframe.src = url.toString();
+          }
+        }
+      </script>
+      <a
+        href="https://mojagazetka.com"
+        aria-label="Moja Gazetka - strona główna"
+        style="display: flex; justify-content: center; margin-bottom: 16px"
+        target="_top"
+      >
+        <img
+          alt="Moja Gazetka - strona główna"
+          height="24"
+          src="https://mojagazetka.com/assets/mojagazetka-partnerserwisu.png"
+        />
+      </a>
+
+      <div style="height: 200vh; background-color: aquamarine">scroll up</div>
+    </div>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  </body>
+</html>
