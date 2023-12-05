@@ -142,7 +142,7 @@
         // const MG_ORIGIN = "https://dev.mojagazetka.com";
         // const MG_ORIGIN = "http://localhost:4200/";
         const MG_ORIGIN =
-          "https://moja-gazetka-web-git-hotfix-1502-moja-gazetka-team.vercel.app/";
+          "https://moja-gazetka-web-git-feature-mgweb-112-918293-moja-gazetka-team.vercel.app/";
         const CONTAINER_ID = "mg-leaflet-reader";
         const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
@@ -188,7 +188,7 @@
         // const MG_ORIGIN = "https://dev.mojagazetka.com";
         // const MG_ORIGIN = "http://localhost:4200/";
         const MG_ORIGIN =
-          "https://moja-gazetka-web-git-hotfix-1502-moja-gazetka-team.vercel.app/";
+          "https://moja-gazetka-web-git-feature-mgweb-112-918293-moja-gazetka-team.vercel.app/";
         const CONTAINER_ID = "mg-leaflet-carousel";
         const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
@@ -204,6 +204,25 @@
         searchParams.append("limit", "32");
         searchParams.append("color", "e51b20");
         searchParams.append("hidePartner", "true");
+        searchParams.append("stores", "chata-polska");
+        searchParams.append("stores", "chorten");
+        searchParams.append("stores", "arhelan");
+        searchParams.append("stores", "avita");
+        searchParams.append("stores", "euro-sklep");
+        searchParams.append("stores", "gama");
+        searchParams.append("stores", "globi");
+        searchParams.append("stores", "gram-market");
+        searchParams.append("stores", "groszek");
+        searchParams.append("stores", "hitpol");
+        searchParams.append("stores", "lewiatan");
+        searchParams.append("stores", "marmax");
+        searchParams.append("stores", "organic-farma-zdrowia");
+        searchParams.append("stores", "sedal");
+        searchParams.append("stores", "sloneczko");
+        searchParams.append("stores", "topaz");
+        searchParams.append("stores", "twoj-market");
+        searchParams.append("stores", "zabka");
+        searchParams.append("hideAllLeafletsLink", "true");
         searchParams.append("useSearchParams", "true");
         if (leafletId) {
           searchParams.append("recommendedById", leafletId);
