@@ -132,121 +132,30 @@
       </div>
     </header>
 
-    <iframe
-      src=""
-      id="mg-leaflet-reader"
-      style="width: 100%; height: calc(100vh + 300px); border: none"
-    ></iframe>
-    <script>
-      {
-        // const MG_ORIGIN = "https://dev.mojagazetka.com";
-        // const MG_ORIGIN = "http://localhost:4200/";
-        const MG_ORIGIN =
-          "https://moja-gazetka-web-git-feature-mgweb-112-918293-moja-gazetka-team.vercel.app/";
-        const CONTAINER_ID = "mg-leaflet-reader";
-        const BASE_URL = `${window.location.origin}${window.location.pathname}`;
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const leafletId =
-          urlParams.get("leafletId") ?? "231031_231026_netto_cjoum";
-        const page = urlParams.get("page") ?? "1";
-        const isRedirected = urlParams.get("isRedirected");
-
-        if (leafletId === null || page === null) {
-          throw new Error("leafletId and page are required");
-        }
-
-        const url = new URL(
-          `${MG_ORIGIN}/widgets/leaflet-reader/${leafletId}/${page}`,
-        );
-        const searchParams = new URLSearchParams();
-        searchParams.append("baseUrl", BASE_URL);
-        searchParams.append("color", "e51b20");
-        searchParams.append("useSearchParams", "true");
-        if (isRedirected) {
-          searchParams.append("isRedirected", "true");
-        }
-        url.search = searchParams.toString();
-
-        const iframe = document.getElementById(CONTAINER_ID);
-
-        iframe.src = url.toString();
-      }
-    </script>
+    <iframe src="" id="mg-leaflet-reader" style="width: 100%; height: calc(100vh + 300px); height: calc(100svh + 300px); border: none"></iframe>
+    <script src="https://mojagazetka.com/widgets/wiadomoscihandlowe_pl/leaflet-page-widget-leaflet-reader.js"></script>
 
     <div class="h-80 bg bg-yellow-300 flex justify-center items-center">
       Page content
     </div>
 
-    <iframe
-      src=""
-      id="mg-leaflet-carousel"
-      style="width: 100%; height: 820px; border: none"
-    ></iframe>
-    <script>
-      {
-        // const MG_ORIGIN = "https://dev.mojagazetka.com";
-        // const MG_ORIGIN = "http://localhost:4200/";
-        const MG_ORIGIN =
-          "https://moja-gazetka-web-git-feature-mgweb-112-918293-moja-gazetka-team.vercel.app/";
-        const CONTAINER_ID = "mg-leaflet-carousel";
-        const BASE_URL = `${window.location.origin}${window.location.pathname}`;
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const leafletId = urlParams.get("leafletId");
-
-        const iframe = document.getElementById(CONTAINER_ID);
-
-        const url = new URL(`${MG_ORIGIN}/widgets/leaflet-carousel`);
-        const searchParams = new URLSearchParams();
-        searchParams.append("url", BASE_URL);
-        searchParams.append("rows", "2");
-        searchParams.append("limit", "32");
-        searchParams.append("color", "e51b20");
-        searchParams.append("hidePartner", "true");
-        searchParams.append("stores", "chata-polska");
-        searchParams.append("stores", "chorten");
-        searchParams.append("stores", "arhelan");
-        searchParams.append("stores", "avita");
-        searchParams.append("stores", "euro-sklep");
-        searchParams.append("stores", "gama");
-        searchParams.append("stores", "globi");
-        searchParams.append("stores", "gram-market");
-        searchParams.append("stores", "groszek");
-        searchParams.append("stores", "hitpol");
-        searchParams.append("stores", "lewiatan");
-        searchParams.append("stores", "marmax");
-        searchParams.append("stores", "organic-farma-zdrowia");
-        searchParams.append("stores", "sedal");
-        searchParams.append("stores", "sloneczko");
-        searchParams.append("stores", "topaz");
-        searchParams.append("stores", "twoj-market");
-        searchParams.append("stores", "zabka");
-        searchParams.append("hideAllLeafletsLink", "true");
-        searchParams.append("useSearchParams", "true");
-        if (leafletId) {
-          searchParams.append("recommendedById", leafletId);
-        }
-        url.search = searchParams.toString();
-
-        iframe.src = url.toString();
-      }
-    </script>
-
-    <a
-      href="https://mojagazetka.com"
-      aria-label="Moja Gazetka - strona główna"
-      style="display: flex; justify-content: center; margin-bottom: 16px"
-      target="_top"
-      ><img
-        alt="Gazetki promocyjne"
-        width="168"
-        height="40"
-        decoding="async"
-        data-nimg="1"
-        style="color: transparent"
-        src="https://moja-gazetka-web-git-feature-mgweb-990-fdcf63-moja-gazetka-team.vercel.app/assets/mojagazetka-partnerserwisu.png"
-    /></a>
+    <div style="display:flex; justify-content:center; flex-wrap:wrap;">
+      <iframe src="" id="mg-leaflet-carousel" style="width: 100%; height: 740px; border: none"></iframe>
+      <script src="https://mojagazetka.com/widgets/wiadomoscihandlowe_pl/leaflet-page-widget-leaflet-carousel.js"></script>
+      <a
+        href="https://mojagazetka.com"
+        aria-label="Moja Gazetka - strona główna"
+        style="display: flex; justify-content: center; margin-bottom: 16px;"
+        target="_top"
+      >
+        <img
+          alt="Moja Gazetka - strona główna"
+          height="24"
+          style="height: 24px"
+          src="https://mojagazetka.com/assets/mojagazetka-partnerserwisu.png"
+        />
+      </a>
+    </div>
 
     <div class="h-80 bg bg-yellow-300 flex justify-center items-center">
       Footer
