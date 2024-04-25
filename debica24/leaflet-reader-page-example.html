@@ -1,0 +1,167 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      property="og:title"
+      content="Leaflets Reader - Moja Gazetka Widgets"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://webpreprod.mojagazetka.com/" />
+    <meta
+      property="og:image"
+      content="https://webpreprod.mojagazetka.com/mg-group/grupa-moja-gazetka-mapa.png"
+    />
+
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="apple-touch-icon" href="../icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <meta name="theme-color" content="#fafafa" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T743XNN");
+    </script>
+    <script>
+      (function () {
+        const GA_ID = "G-WNC5CM1XK5";
+        // List all the origins that might send dataLayer messages to this listener
+        const allowedOrigins = [
+          "https://webpreprod.mojagazetka.com",
+          "http://localhost:4200",
+          "https://moja-gazetka-web-git-hotfix-1502-moja-gazetka-team.vercel.app",
+        ];
+
+        const handleMessage = function (event) {
+          if (window.gtag === undefined) return;
+          if (!allowedOrigins.includes(event.origin)) return;
+          try {
+            const msg = JSON.parse(event.data);
+            console.log("event", msg.eventName, {
+              send_to: GA_ID,
+              ...msg.params,
+            });
+            window.gtag("event", msg.eventName, {
+              send_to: GA_ID,
+              ...msg.params,
+            });
+          } catch (e) {
+            console.error(e);
+          }
+        };
+
+        window.addEventListener("message", handleMessage);
+      })();
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T743XNN"
+        height="0"
+        width="0"
+      ></iframe>
+    </noscript>
+    <header>
+      <div class="py-4 px-2 bg-yellow-200">
+        <nav class="flex items-center justify-between flex-wrap">
+          <div class="text-sm lg:flex-grow mt-2 animated jackinthebox xl:mx-8">
+            <a
+              href="#home"
+              class="block lg:inline-block text-md font-bold text-orange-500 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+            >
+              HOME
+            </a>
+            <a
+              href="#home"
+              class="block lg:inline-block text-md font-bold text-gray-900 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+            >
+              ROAD & STORY
+            </a>
+            <a
+              href="#home"
+              class="block lg:inline-block text-md font-bold text-gray-900 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+            >
+              ACCOMMODATION
+            </a>
+            <a
+              href="#home"
+              class="block lg:inline-block text-md font-bold text-gray-900 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+            >
+              TOURS
+            </a>
+            <a
+              href="#home"
+              class="block lg:inline-block text-md font-bold text-gray-900 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+            >
+              CONTACT US
+            </a>
+            <a
+              href="#home"
+              class="block lg:inline-block text-md font-bold text-gray-900 sm:hover:border-indigo-400 hover:text-orange-500 mx-2 focus:text-blue-500 p-1 hover:bg-gray-300 sm:hover:bg-transparent rounded-lg"
+            >
+              COMING SOON
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+
+    <iframe src="" id="mg-leaflet-reader" style="width: 100%; height: 100vh; height: 100svh; border: none"></iframe>
+    <script src="https://mojagazetka.com/widgets/debica24_eu/leaflet-page-widget-leaflet-reader.js"></script>
+
+
+    <div class="h-80 bg bg-yellow-300 flex justify-center items-center">
+      Page content
+    </div>
+
+
+    <div style="display:flex; justify-content:center; flex-wrap:wrap;">
+      <iframe src="" id="mg-leaflet-carousel" style="width: 100%; height: 740px; border: none"></iframe>
+      <script src="https://mojagazetka.com/widgets/debica24_eu/leaflet-page-widget-leaflet-carousel.js"></script>
+      <a
+        href="https://mojagazetka.com/gazetki-promocyjne/pepco"
+        aria-label="Gazetka Pepco - Zobacz aktualne promocje i nowe gazetki na stronie Moja Gazetka"
+        style="display: flex; justify-content: center; margin-bottom: 16px;"
+        target="_blank"
+      >
+        <img
+          alt="Gazetka Pepco - Zobacz aktualne promocje i nowe gazetki na stronie Moja Gazetka"
+          height="24"
+          style="height: 24px"
+          src="https://mojagazetka.com/assets/mojagazetka-partnerserwisu.png"
+        />
+      </a>
+    </div>
+
+    <div class="h-80 bg bg-yellow-300 flex justify-center items-center">
+      Footer
+    </div>
+  </body>
+</html>
