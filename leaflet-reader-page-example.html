@@ -132,43 +132,13 @@
       </div>
     </header>
 
-    <iframe src="" id="mg-leaflet-reader" style="width: 100%; height: calc(100vh); height: calc(100svh); border: none"></iframe>
-    <script>
-      (function () {
-        const THEME_COLOR = '04458A';
-        const UTM_SOURCE = 'halogorlice_info';
+    <div class="h-[1600px] bg bg-yellow-300 flex justify-center items-center">
+      Page content
+    </div>
 
-        const MG_ORIGIN = 'https://webpreprod.mojagazetka.com';
-        const CONTAINER_ID = 'mg-leaflet-reader';
-        const BASE_URL = `${window.location.origin}${window.location.pathname}`;
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const leafletId = urlParams.get('leafletId');
-        const page = urlParams.get('page') ?? '1';
-        const isRedirected = urlParams.get('isRedirected');
-
-        const url = new URL(
-          leafletId === null
-            ? `${MG_ORIGIN}/widgets/leaflet-reader/newest/1`
-            : `${MG_ORIGIN}/widgets/leaflet-reader/${leafletId}/${page}`
-        );
-        const searchParams = new URLSearchParams();
-        searchParams.append('baseUrl', BASE_URL);
-        searchParams.append('color', THEME_COLOR);
-        searchParams.append('useSearchParams', 'true');
-        if (isRedirected) {
-          searchParams.append('isRedirected', 'true');
-        }
-        searchParams.append('utm_medium', 'widgets');
-        searchParams.append('utm_source', UTM_SOURCE);
-        url.search = searchParams.toString();
-
-        const iframe = document.getElementById(CONTAINER_ID);
-
-        iframe.src = url.toString();
-      })();
-
-    </script>
+    <iframe src="" id="mg-leaflet-reader" style="width: 100%; height: 100vh; height: 100svh; border: none"></iframe>
+    <script src="https://dev.mojagazetka.com/widgets/_test_/leaflet-page-widget-leaflet-reader.js"></script>
 
 
     <div class="h-80 bg bg-yellow-300 flex justify-center items-center">
@@ -178,18 +148,18 @@
 
     <div style="display:flex; justify-content:center; flex-wrap:wrap;">
       <iframe src="" id="mg-leaflet-carousel" style="width: 100%; height: 740px; border: none"></iframe>
-      <script src="https://webpreprod.mojagazetka.com/widgets/wp_pl/leaflet-page-widget-leaflet-carousel.js"></script>
+      <script src="https://dev.mojagazetka.com/widgets/_test_/leaflet-page-widget-leaflet-carousel.js"></script>
       <a
-        href="https://webpreprod.mojagazetka.com"
-        aria-label="Moja Gazetka - strona główna"
+        href="https://dev.mojagazetka.com/gazetki-promocyjne/lidl"
+        aria-label="Gazetka Lidl - Zobacz aktualne promocje i nowe gazetki na stronie Moja Gazetka"
         style="display: flex; justify-content: center; margin-bottom: 16px;"
-        target="_top"
+        target="_blank"
       >
         <img
-          alt="Moja Gazetka - strona główna"
+          alt="Gazetka Lidl - Zobacz aktualne promocje i nowe gazetki na stronie Moja Gazetka"
           height="24"
           style="height: 24px"
-          src="https://webpreprod.mojagazetka.com/assets/mojagazetka-partnerserwisu.png"
+          src="https://dev.mojagazetka.com/assets/mojagazetka-partnerserwisu.png"
         />
       </a>
     </div>
